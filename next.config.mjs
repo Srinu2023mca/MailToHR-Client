@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     webpack: (config, { dev }) => {
         if (!dev) {
-          config.devtool = source-map;
+          config.devtool = 'source-map';
         }
         return config;
       },

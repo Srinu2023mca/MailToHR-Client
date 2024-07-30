@@ -1,0 +1,28 @@
+.container{
+  background-color:rgba(162, 209, 223, 0.367);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.form{
+  background-color:rgba(127, 250, 45, 0.989);
+  width: 100%;
+  /* min-width: 250px; */
+  height: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.borderLayout{
+  border: 10px solid rgba(241, 237, 237, 0.938);
+  border-radius: 10px;
+  width: 70%;
+}

@@ -9,9 +9,13 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function Form() {
   const [email, setEmail] = useState("");
   const [position, setPosition] = useState("");
+  const [loading, setLoading] = useState(false); // State to manage loading
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setLoading(true); // Set loading to true when starting submission
 
     const formData = {
       email,
@@ -38,6 +42,9 @@ export default function Form() {
       }
     } catch (error) {
       console.error("Network error:", error);
+      toast.error("Network error, please try again");
+    }finally {
+      setLoading(false); // Set loading to false when done
     }
   };
 
@@ -68,7 +75,13 @@ export default function Form() {
             spellCheck={false} 
           />
         </div>
-        <button type="submit" className="btn btn-primary" >Apply</button>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+            {loading ? (
+              <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            ) : (
+              "Apply"
+            )}
+          </button>
       </form>
       </div>
       <ToastContainer />
